@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddCategory = ({ setCategories }) => {
+const AddCategory = ({ setCategories, categories }) => {
     const [category, setCategory] = useState('');
 
     const handleChange = (e) => {
@@ -10,7 +10,8 @@ const AddCategory = ({ setCategories }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if( category.trim().length <= 1 ) return;
-        setCategories(categories => [...categories, category]);
+        if (categories.includes(category)) return;
+        setCategories([...categories, category]);
         setCategory('');
     };
 
