@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const AddCategory = () => {
+const AddCategory = ({ setCategories }) => {
     const [category, setCategory] = useState('');
 
     const handleChange = (e) => {
@@ -9,7 +9,9 @@ const AddCategory = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log('Enviando...');
+        if( category.trim().length <= 1 ) return;
+        setCategories(categories => [...categories, category]);
+        setCategory('');
     };
 
     return (
@@ -20,8 +22,6 @@ const AddCategory = () => {
                 value={category}
                 onChange={handleChange}
             />
-
-            <button>Agregar</button>
         </form>
     );
 };

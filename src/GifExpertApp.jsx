@@ -2,18 +2,15 @@ import { useState } from "react";
 import AddCategory from "./components/AddCategory";
 
 const GifExpertApp = () => {
-    const [categories, setCategories] = useState(['Demon Slayer', 'Dragon ball z']);
-
-    const onAddCategory = () => {
-        const categoria = prompt('Ingresa una cateogoria');
-        setCategories([...categories, categoria]);
-    };
+    const [categories, setCategories] = useState(['Demon Slayer']);
 
     return (
         <>
             <h1>GifExpertApp</h1>
 
-            <AddCategory />
+            <AddCategory 
+                setCategories={setCategories}
+            />
 
             <ol>
                 {
