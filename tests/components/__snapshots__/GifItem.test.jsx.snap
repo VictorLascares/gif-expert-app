@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando el componente <GifItem /> Evaluando el snapshot 1`] = `
+<div>
+  <div
+    class="card"
+  >
+    <img
+      alt="Imagen de Dragon Ball Z"
+      src="https://dragon-ball-z.com"
+    />
+    <p>
+      Dragon Ball Z
+    </p>
+  </div>
+</div>
+`;
