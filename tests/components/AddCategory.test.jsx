@@ -2,13 +2,13 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { AddCategory } from "../../src/components/AddCategory";
 
 describe('Probando <AddCategory />', () => {
-    const seCategories = () => { };
+    const setCategories = jest.fn();
     const categories = [];
 
     test('Debe de cambiar el valor de la caja de texto', () => {
         render(
             <AddCategory
-                setCategories={seCategories}
+                setCategories={setCategories}
                 categories={categories}
             />
         );
@@ -21,7 +21,7 @@ describe('Probando <AddCategory />', () => {
         const category = 'Saitama';
         render(
             <AddCategory
-                setCategories={seCategories}
+                setCategories={setCategories}
                 categories={categories}
             />
         );
@@ -32,5 +32,8 @@ describe('Probando <AddCategory />', () => {
         fireEvent.submit(form)
 
         expect( input.value ).toBe('');
+        expect( setCategories ).toHaveBeenCalled();
+        expect( setCategories ).toHaveBeenCalledTimes(1);
+        expect( setCategories ).toHaveBeenCalledWith([ category ]);
     });
 });
