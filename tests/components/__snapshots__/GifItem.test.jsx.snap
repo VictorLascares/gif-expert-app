@@ -7,7 +7,7 @@ exports[`Probando el componente <GifItem /> Evaluando el snapshot 1`] = `
   >
     <img
       alt="Imagen de Dragon Ball Z"
-      src="https://dragon-ball-z.com"
+      src="https://dragon-ball-z.com/goku.gif"
     />
     <p>
       Dragon Ball Z
