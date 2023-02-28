@@ -1,4 +1,4 @@
-const Spinner = () => {
+export const Spinner = () => {
     return (
         <div className="sk-chase">
             <div className="sk-chase-dot"></div>
@@ -10,5 +10,3 @@ const Spinner = () => {
         </div>
     );
 }
-
-export default Spinner;
