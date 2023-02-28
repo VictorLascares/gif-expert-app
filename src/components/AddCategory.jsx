@@ -11,7 +11,7 @@ const AddCategory = ({ setCategories, categories }) => {
         e.preventDefault();
         if( category.trim().length <= 1 ) return;
         if (categories.includes(category)) return;
-        setCategories([...categories, category]);
+        setCategories([ category, ...categories]);
         setCategory('');
     };
 
